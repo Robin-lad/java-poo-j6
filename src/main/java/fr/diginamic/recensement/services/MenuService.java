@@ -1,5 +1,6 @@
 package fr.diginamic.recensement.services;
 
+import java.io.IOException;
 import java.util.Scanner;
 
 import fr.diginamic.recensement.entites.Recensement;
@@ -13,10 +14,12 @@ import fr.diginamic.recensement.entites.Recensement;
 public abstract class MenuService {
 
 	/**
-	 * M√©thode abstraite de traitement que doivent poss√©der toutes les m√©thodes de services
+	 * MÈthode abstraite de traitement que doivent posseder toutes les mÈthodes de
+	 * services
 	 * 
-	 * @param lignes lignes du fichier
+	 * @param lignes  lignes du fichier
 	 * @param scanner scanner
+	 * @throws IOException
 	 */
-	public abstract void traiter(Recensement recensement, Scanner scanner);
+	public abstract void traiter(Recensement recensement, Scanner scanner) throws RechercheException, NumberFormatException;
 }

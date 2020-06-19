@@ -13,9 +13,9 @@ import fr.diginamic.recensement.entites.Ville;
 public class RecherchePopulationRegionService extends MenuService {
 
 	@Override
-	public void traiter(Recensement rec, Scanner scanner) {
+	public void traiter(Recensement rec, Scanner scanner) throws RechercheException {
 		
-		System.out.println("Quel est le code de la rÃ©gion recherchÃ©e ? ");
+		System.out.println("Quel est le code de la région recherchée ? ");
 		String choix = scanner.nextLine();
 		
 		List<Ville> villes = rec.getVilles();
@@ -28,10 +28,10 @@ public class RecherchePopulationRegionService extends MenuService {
 			}
 		}
 		if (somme>0){
-			System.out.println("Population de la rÃ©gion "+nom+" : "+ somme);
+			System.out.println("Population de la région "+nom+" : "+ somme);
 		}
 		else {
-			System.out.println("RÃ©gion "+choix+" non trouvÃ©e.");
+			throw new RechercheException("Région non trouvée.");
 		}
 	}
 
